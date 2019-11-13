@@ -1,0 +1,41 @@
+
+body {
+  background-image: url("./img/45-degree-fabric-light.png");
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.app_wrapper {
+  display: grid;
+  grid-template-areas: 
+  "h h"
+  "n c";
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 2fr 10fr;
+  grid-gap: 5px;
+  margin: 0 auto;
+}
+
+.app_wrapper_content {
+  display: grid;
+  grid-template-areas: 
+  "h h"
+  " c";
+  /* grid-template-columns: 2fr 10fr; */
+  grid-gap: 5px;
+}
+
+
+
+
+
+
+

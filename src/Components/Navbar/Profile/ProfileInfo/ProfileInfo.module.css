@@ -1,0 +1,19 @@
+
+
+.profileInfo_banner {
+  width: 100%;
+  overflow: hidden;
+}
+
+.profileInfo_block {
+  padding: 10px;
+}
+
+
+
+
+.profileInfo_ava {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
