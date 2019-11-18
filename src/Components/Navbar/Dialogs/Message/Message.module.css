@@ -1,27 +1,15 @@
-.dialogs {
-  display: grid;
-  grid-template-columns: 2fr 10fr;
-  background-color: lightgrey;
-}
-
-.dialogs_items {
-  padding: 15px;
-  color: blue;
-}
-
-.dialog_active {
-  color: #9939ED;
-}
-
-.dialog {
-  
+.messageItem {
+  display: flex;
+  margin: 20px;
 }
 
 .messages {
   padding: 15px;
 }
 
-.message {
-
+.messageItem_img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
 }
 

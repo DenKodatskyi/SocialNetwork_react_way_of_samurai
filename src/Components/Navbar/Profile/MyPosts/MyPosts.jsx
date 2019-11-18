@@ -1,16 +1,22 @@
 import React from "react";
 import st/* st - style */ from "./MyPosts.module.css";
 import Post from "./Post/Post.jsx";
+import {addPostAC, updateNewPostTextAC} from "../../../../redux/profileReducer";
 
-const MyPosts = () => {
+const MyPosts = (props) => {
 
-  let posts = [
-    { id: 0, message: "Hi, how are you?", likes: 15 },
-    { id: 1, message: "It`s my first post", likes: 8 },
-    { id: 2, message: "It`s test", likes: 1 }
-  ]
+  let postsElements = props.posts.map((p/* p - postsEl */) => <Post message={p.message} id={p.id} likes={p.likes} />);
 
-  let postsElements = posts.map((p/* p - postsEl */) => <Post message={p.message} id={p.id} likes={p.likes} />);
+  let newPostElement = React.createRef();
+
+  let addPost = () => {
+    props.dispatch(addPostAC());
+  }
+
+  let onPostChange = () => {
+    let text = newPostElement.current.value;
+    props.dispatch(updateNewPostTextAC(text));
+  }
 
   return (
     <div className={st.myPosts_block}>
@@ -18,10 +24,10 @@ const MyPosts = () => {
 
       <div>
         <div>
-          <textarea></textarea>
+          <textarea ref={newPostElement} placeholder="Your post..." onChange={onPostChange} value={props.newPostText} />
         </div>
         <div>
-          <button>Add post</button>
+          <button onClick={addPost}>Add post</button>
         </div>
       </div> 
 
