@@ -1,8 +1,8 @@
 import React from "react";
-import st/* st - style */ from "./FriendsItem.module.css";
+import st/* st - style */ from "./UsersItem.module.css";
 import { NavLink } from "react-router-dom";
 
-const FriendsItem = (props) => {
+const UsersItem = (props) => {
   let path = "/dialogs/" + props.id
   return (
     <div>
@@ -10,8 +10,8 @@ const FriendsItem = (props) => {
       <NavLink to={path}>{props.name}</NavLink>
     </div>
 
-    <div className={st.friendsItem}>
-      <img className={st.friendsItem_img} src="https://a.wattpad.com/cover/84608722-352-k886345.jpg" />
+    <div className={st.usersItem}>
+      <img className={st.usersItem_img} src="https://a.wattpad.com/cover/84608722-352-k886345.jpg" />
     </div>
     </div>
   )
@@ -19,4 +19,4 @@ const FriendsItem = (props) => {
 
 
 
-export default FriendsItem;
+export default UsersItem;

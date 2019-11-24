@@ -1,0 +1,29 @@
+.users {
+  display: grid;
+  background-color: lightgrey;
+}
+
+.userItem {
+  padding: 15px;
+}
+
+.userPhoto {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.pages {
+  margin: 10px;
+  cursor: pointer;
+}
+
+.pages span {
+  margin: 5px;
+}
+
+.active {
+  font-weight: 700;
+}
+
+
