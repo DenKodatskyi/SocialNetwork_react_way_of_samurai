@@ -1,16 +1,14 @@
-import React from 'react';
-import './App.css';
-import Header from './Components/Header/Header.jsx';
-import Navbar from './Components/Navbar/Navbar.jsx';
-import Profile from './Components/Navbar/Profile/Profile.jsx';
-import DialogsContainer from './Components/Navbar/Dialogs/DialogsContainer' ;
-import News from './Components/Navbar/News/News.jsx';
-import Music from './Components/Navbar/Music/Music.jsx';
-import UsersContainer from './Components/Navbar/Users/UsersContainer';
-import Settings from './Components/Navbar/Settings/Settings.jsx';
+import React from "react";
+import "./App.css";
+import HeaderContainer from "./Components/Header/HeaderContainer";
+import Navbar from "./Components/Navbar/Navbar.jsx";
+import ProfileContainer from "./Components/Navbar/Profile/ProfileContainer";
+import DialogsContainer from "./Components/Navbar/Dialogs/DialogsContainer";
+import News from "./Components/Navbar/News/News.jsx";
+import Music from "./Components/Navbar/Music/Music.jsx";
+import UsersContainer from "./Components/Navbar/Users/UsersContainer";
+import Settings from "./Components/Navbar/Settings/Settings.jsx";
 import { Route } from "react-router-dom";
-
-
 
 const App = (props) => {
 
@@ -18,18 +16,18 @@ const App = (props) => {
     <div className="container">
       <div className="app_wrapper">
 
-        <Header />
+        <HeaderContainer />
         <Navbar />
 
         <div className="app_wrapper_content">
-          <Route path="/profile" render={() => <Profile store={props.store} />} />
+          <Route path="/profile/:userId?" render={() => <ProfileContainer />} />
 
-          <Route path="/dialogs" render={() => <DialogsContainer store={props.store} />} />
+          <Route path="/dialogs" render={() => <DialogsContainer />} />
 
           <Route path="/news" render={() => <News />} />
-          <Route path="/Music" render={() => <Music />} />
-          <Route path="/Users" render={() => <UsersContainer />} />
-          <Route /* exact */ path="/Settings" render={() => <Settings />} />
+          <Route path="/music" render={() => <Music />} />
+          <Route path="/users" render={() => <UsersContainer />} />
+          <Route /* exact */ path="/settings" render={() => <Settings />} />
         </div>
 
       </div>
