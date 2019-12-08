@@ -29,7 +29,6 @@ a {
   grid-template-areas: 
   "h h"
   " c";
-  /* grid-template-columns: 2fr 10fr; */
   grid-gap: 5px;
 }
 
