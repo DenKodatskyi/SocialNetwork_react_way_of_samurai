@@ -2,6 +2,7 @@ import React from "react";
 import st/* st - style */ from "./Dialogs.module.css";
 import DialogItem from "./DialogItem/DialogItem.jsx";
 import Message from "./Message/Message.jsx";
+import AddMessageFormRedux from "./Message/AddMessageForm.jsx";
 
 
 const Dialogs = (props) => {
@@ -12,13 +13,8 @@ const Dialogs = (props) => {
   let messagesElements = state.messages.map((m/*m - messageEl */) => <Message message={m.message} id={m.id} />);
   let newMessageBody = state.newMessageBody;
 
-  let onSendMessageClick = () => {
-    props.sendMessage();
-  }
-
-  let onNewMessageChange = (e) => {
-    let body = e.target.value;
-    props.updateNewMessageBody(body);
+  let addNewMessage = (values) => {
+    props.sendMessage(values.newMessageBody);
   }
 
   return (
@@ -31,14 +27,12 @@ const Dialogs = (props) => {
       <div className={st.messages}>
         <div>{messagesElements}</div>
 
-        <div>
-          <textarea placeholder="Your message..." value={newMessageBody} onChange={onNewMessageChange} ></textarea>
-        </div>        
-        <div><button onClick={onSendMessageClick}>Send</button></div>
-      </div>
+        <AddMessageFormRedux onSubmit={addNewMessage} />
 
+      </div>
     </div>
   )
 }
+
 
 export default Dialogs;
